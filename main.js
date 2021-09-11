@@ -2986,10 +2986,10 @@ Game.Launch=function()
 				Game.heavenlyChips=0;
 				Game.heavenlyChipsSpent=0;
 				Game.heavenlyCookies=0;
-				Game.permanentUpgrades=[-1,-1,-1,-1,-1];
+				Game.permanentUpgrades=[1,-1,-1,-1,-1];
 				Game.ascensionMode=0;
 				Game.lumps=-1;
-				Game.lumpsTotal=-1;
+				Game.lumpsTotal=5;
 				Game.lumpT=Date.now();
 				Game.lumpRefill=0;
 				Game.removeClass('lumpsOn');
