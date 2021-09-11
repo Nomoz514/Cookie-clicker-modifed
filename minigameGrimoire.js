@@ -11,7 +11,7 @@ M.launch=function()
 		
 		M.spells={
 			'conjure baked goods':{
-				name:'Conjure Baked Goods',
+				name:'COOKIE',
 				desc:'Summon half an hour worth of your CpS, capped at 15% of your cookies owned.',
 				failDesc:'Trigger a 15-minute clot and lose 15 minutes of CpS.',
 				icon:[21,11],
@@ -19,7 +19,7 @@ M.launch=function()
 				costPercent:0.4,
 				win:function()
 				{
-					var val=Math.max(7,Math.min(Game.cookies*0.15,Game.cookiesPs*60*30));
+					var val=Math.max(7,Math.min(Game.cookies*15,Game.cookiesPs*60*30));
 					Game.Earn(val);
 					Game.Notify('Conjure baked goods!','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> out of thin air.',[21,11],6);
 					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
@@ -27,7 +27,7 @@ M.launch=function()
 				fail:function()
 				{
 					var buff=Game.gainBuff('clot',60*15,0.5);
-					var val=Math.min(Game.cookies*0.15,Game.cookiesPs*60*15)+13;
+					var val=Math.min(Game.cookies*15,Game.cookiesPs*60*15)+13;
 					val=Math.min(Game.cookies,val);
 					Game.Spend(val);
 					Game.Notify(buff.name,buff.desc,buff.icon,6);
