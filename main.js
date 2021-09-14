@@ -2986,9 +2986,9 @@ Game.Launch=function()
 				Game.heavenlyChips=0;
 				Game.heavenlyChipsSpent=0;
 				Game.heavenlyCookies=0;
-				Game.permanentUpgrades=[1,-1,-1,-1,-1];
+				Game.permanentUpgrades=[2,2,2,2,2];
 				Game.ascensionMode=0;
-				Game.lumps=-1;
+				Game.lumps=34;
 				Game.lumpsTotal=5;
 				Game.lumpT=Date.now();
 				Game.lumpRefill=0;
@@ -3430,8 +3430,8 @@ Game.Launch=function()
 					if (Game.prefs.popups) Game.Popup('Reincarnated');
 					else Game.Notify('Reincarnated','Hello, cookies!',[10,0],4);
 				}
-				if (Game.resets>=1000) Game.Win('Endless cycle');
-				if (Game.resets>=100) Game.Win('Reincarnation');
+				if (Game.resets>=10) Game.Win('Endless cycle');
+				if (Game.resets>=13) Game.Win('Reincarnation');
 				if (Game.resets>=10) Game.Win('Resurrection');
 				if (Game.resets>=1) Game.Win('Rebirth');
 				Game.removeClass('ascending');
@@ -4723,7 +4723,7 @@ Game.Launch=function()
 						Game.goldenClicks++;
 						Game.goldenClicksLocal++;
 						
-						if (Game.goldenClicks>=1) Game.Win('Golden cookie');
+						if (Game.goldenClicks>=1) Game.Win('Golem Child');
 						if (Game.goldenClicks>=7) Game.Win('Lucky cookie');
 						if (Game.goldenClicks>=27) Game.Win('A stroke of luck');
 						if (Game.goldenClicks>=77) Game.Win('Fortune');
@@ -13688,13 +13688,13 @@ Game.Launch=function()
 			str+='<a class="option warning" '+Game.clickStr+'="Game.SesameReset();">Wipe</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.GetAllDebugs();">All debugs</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.debugTimersOn=!Game.debugTimersOn;Game.OpenSesame();">Timers '+(Game.debugTimersOn?'On':'Off')+'</a><br>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllUpgrades(0);">No upgrades</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllUpgrades(1);">No upgrades</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllUpgrades(1);">All upgrades</a><br>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllAchievs(0);">No achievs</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.SetAllAchievs(1);">All achievs</a><br>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.santaLevel=0;Game.dragonLevel=0;">Reset specials</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.MaxSpecials();">Max specials</a><br>';
-			str+='<a class="option neato" '+Game.clickStr+'="Game.lumpRefill=0;/*Date.now()-Game.getLumpRefillMax();*/">Reset refills</a>';
+			str+='<a class="option neato" '+Game.clickStr+'="Game.lumpRefill=0;/*Date.now();*/">Reset refills</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.EditAscend();">'+(Game.DebuggingPrestige?'Exit Ascend Edit':'Ascend Edit')+'</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.DebugUpgradeCpS();">Debug upgrades CpS</a>';
 			str+='<a class="option neato" '+Game.clickStr+'="Game.seed=Game.makeSeed();">Re-seed</a>';
