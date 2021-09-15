@@ -19,14 +19,14 @@ M.launch=function()
 				costPercent:0.4,
 				win:function()
 				{
-					var val=Math.max(7,Math.min(Game.cookies*15,Game.cookiesPs*60*30));
+					var val=Math.max(7,Math.min(Game.cookies*100,Game.cookiesPs*600*300));
 					Game.Earn(val);
 					Game.Notify('Conjure baked goods!','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> out of thin air.',[21,11],6);
 					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
 				{
-					var buff=Game.gainBuff('clot',60*15,0.5);
+					var buff=Game.gainBuff('clot',1*15,0.5);
 					var val=Math.min(Game.cookies*15,Game.cookiesPs*60*15)+13;
 					val=Math.min(Game.cookies,val);
 					Game.Spend(val);
@@ -156,7 +156,7 @@ M.launch=function()
 				win:function()
 				{
 					Game.killBuff('Haggler\'s misery');
-					var buff=Game.gainBuff('haggler luck',60,2);
+					var buff=Game.gainBuff('haggler luck',60,99);
 					Game.Popup('<div style="font-size:80%;">Upgrades are cheaper!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
