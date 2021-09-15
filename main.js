@@ -1628,8 +1628,7 @@ Game.Launch=function()
 		=======================================================================================*/
 		Game.RandomBakeryName=function()
 		{
-			return (Math.random()>0.05?(choose(['Magic','Fantastic','Fancy','Sassy','Snazzy','Pretty','Cute','Pirate','Ninja','Zombie','Robot','Radical','Urban','Cool','Hella','Sweet','Awful','Double','Triple','Turbo','Techno','Disco','Electro','Dancing','Wonder','Mutant','Space','Science','Medieval','Future','Captain','Bearded','Lovely','Tiny','Big','Fire','Water','Frozen','Metal','Plastic','Solid','Liquid','Moldy','Shiny','Happy','Happy Little','Slimy','Tasty','Delicious','Hungry','Greedy','Lethal','Professor','Doctor','Power','Chocolate','Crumbly','Choklit','Righteous','Glorious','Mnemonic','Psychic','Frenetic','Hectic','Crazy','Royal','El','Von'])+' '):'Mc')+choose(['Cookie','Biscuit','Muffin','Scone','Cupcake','Pancake','Chip','Sprocket','Gizmo','Puppet','Mitten','Sock','Teapot','Mystery','Baker','Cook','Grandma','Click','Clicker','Spaceship','Factory','Portal','Machine','Experiment','Monster','Panic','Burglar','Bandit','Booty','Potato','Pizza','Burger','Sausage','Meatball','Spaghetti','Macaroni','Kitten','Puppy','Giraffe','Zebra','Parrot','Dolphin','Duckling','Sloth','Turtle','Goblin','Pixie','Gnome','Computer','Pirate','Ninja','Zombie','Robot']);
-		}
+			return (Math.random()>0.05?(choose(['Sussy Baka'])
 		Game.GetBakeryName=function() {return Game.RandomBakeryName();}
 		Game.bakeryName=Game.GetBakeryName();
 		Game.bakeryNameL=l('bakeryName');
@@ -3765,7 +3764,7 @@ Game.Launch=function()
 		}
 		Game.computeLumpTimes=function()
 		{
-			var hour=1000*60*60;
+			var hour=1*6*6;
 			Game.lumpMatureAge=hour*20;
 			Game.lumpRipeAge=hour*23;
 			if (Game.Has('Stevia Caelestis')) Game.lumpRipeAge-=hour;
@@ -4028,32 +4027,32 @@ Game.Launch=function()
 			var add=0;
 			if (Game.Has('Thousand fingers')) add+=		0.1;
 			if (Game.Has('Million fingers')) add*=		5;
-			if (Game.Has('Billion fingers')) add*=		10;
-			if (Game.Has('Trillion fingers')) add*=		20;
-			if (Game.Has('Quadrillion fingers')) add*=	20;
-			if (Game.Has('Quintillion fingers')) add*=	20;
-			if (Game.Has('Sextillion fingers')) add*=	20;
-			if (Game.Has('Septillion fingers')) add*=	20;
-			if (Game.Has('Octillion fingers')) add*=	20;
-			if (Game.Has('Nonillion fingers')) add*=	20;
+			if (Game.Has('Billion fingers')) add*=		100;
+			if (Game.Has('Trillion fingers')) add*=		200;
+			if (Game.Has('Quadrillion fingers')) add*=	1000;
+			if (Game.Has('Quintillion fingers')) add*=	2000;
+			if (Game.Has('Sextillion fingers')) add*=	90;
+			if (Game.Has('Septillion fingers')) add*=	210;
+			if (Game.Has('Octillion fingers')) add*=	230;
+			if (Game.Has('Nonillion fingers')) add*=	203;
 			
 			var num=0;
 			for (var i in Game.Objects) {num+=Game.Objects[i].amount;}
 			num-=Game.Objects['Cursor'].amount;
 			add=add*num;
-			if (Game.Has('Plastic mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Iron mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Titanium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Adamantium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Unobtainium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Eludium mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Wishalloy mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Fantasteel mouse')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('Plastic mouse')) add+=Game.cookiesPs*31;
+			if (Game.Has('Iron mouse')) add+=Game.cookiesPs*31;
+			if (Game.Has('Titanium mouse')) add+=Game.cookiesPs*31;
+			if (Game.Has('Adamantium mouse')) add+=Game.cookiesPs*31;
+			if (Game.Has('Unobtainium mouse')) add+=Game.cookiesPs*31;
+			if (Game.Has('Eludium mouse')) add+=Game.cookiesPs*31;
+			if (Game.Has('Wishalloy mouse')) add+=Game.cookiesPs*31;
+			if (Game.Has('Fantasteel mouse')) add+=Game.cookiesPs*31;
 			if (Game.Has('Nevercrack mouse')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('Armythril mouse')) add+=Game.cookiesPs*0.01;
 			if (Game.Has('Technobsidian mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Plasmarble mouse')) add+=Game.cookiesPs*0.01;
-			if (Game.Has('Miraculite mouse')) add+=Game.cookiesPs*0.01;
+			if (Game.Has('Plasmarble mouse')) add+=Game.cookiesPs*200;
+			if (Game.Has('Miraculite mouse')) add+=Game.cookiesPs*1111;
 			
 			if (Game.Has('Fortune #104')) add+=Game.cookiesPs*0.01;
 			var mult=1;
@@ -4358,12 +4357,12 @@ Game.Launch=function()
 			
 			var catMult=1;
 			
-			if (Game.Has('Kitten helpers')) catMult*=(1+Game.milkProgress*0.1*milkMult);
-			if (Game.Has('Kitten workers')) catMult*=(1+Game.milkProgress*0.125*milkMult);
-			if (Game.Has('Kitten engineers')) catMult*=(1+Game.milkProgress*0.15*milkMult);
-			if (Game.Has('Kitten overseers')) catMult*=(1+Game.milkProgress*0.175*milkMult);
-			if (Game.Has('Kitten managers')) catMult*=(1+Game.milkProgress*0.2*milkMult);
-			if (Game.Has('Kitten accountants')) catMult*=(1+Game.milkProgress*0.2*milkMult);
+			if (Game.Has('Kitten helpers')) catMult*=(1+Game.milkProgress*31*milkMult);
+			if (Game.Has('Kitten workers')) catMult*=(1+Game.milkProgress*125*milkMult);
+			if (Game.Has('Kitten engineers')) catMult*=(1+Game.milkProgress*15*milkMult);
+			if (Game.Has('Kitten overseers')) catMult*=(1+Game.milkProgress*175*milkMult);
+			if (Game.Has('Kitten managers')) catMult*=(1+Game.milkProgress*2*milkMult);
+			if (Game.Has('Kitten accountants')) catMult*=(1+Game.milkProgress*1222*milkMult);
 			if (Game.Has('Kitten specialists')) catMult*=(1+Game.milkProgress*0.2*milkMult);
 			if (Game.Has('Kitten experts')) catMult*=(1+Game.milkProgress*0.2*milkMult);
 			if (Game.Has('Kitten consultants')) catMult*=(1+Game.milkProgress*0.2*milkMult);
@@ -4394,7 +4393,7 @@ Game.Launch=function()
 			mult*=catMult;
 			
 			var eggMult=1;
-			if (Game.Has('Chicken egg')) eggMult*=1.01;
+			if (Game.Has('Chicken egg')) eggMult*=111;
 			if (Game.Has('Duck egg')) eggMult*=1.01;
 			if (Game.Has('Turkey egg')) eggMult*=1.01;
 			if (Game.Has('Quail egg')) eggMult*=1.01;
