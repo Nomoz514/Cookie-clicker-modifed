@@ -19,7 +19,7 @@ M.launch=function()
 				costPercent:0.4,
 				win:function()
 				{
-					var val=Math.max(7,Math.min(Game.cookies*100,Game.cookiesPs*600*300));
+					var val=Math.max(7,Math.min(Game.cookies*10000,Game.cookiesPs*6000*3000));
 					Game.Earn(val);
 					Game.Notify('Conjure baked goods!','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> out of thin air.',[21,11],6);
 					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
@@ -289,8 +289,8 @@ M.launch=function()
 		M.getFailChance=function(spell)
 		{
 			var failChance=0.15;
-			if (Game.hasBuff('Magic adept')) failChance*=0.1;
-			if (Game.hasBuff('Magic inept')) failChance*=5;
+			if (Game.hasBuff('Magic adept')) failChance*=0;
+			if (Game.hasBuff('Magic inept')) failChance*=0;
 			if (spell.failFunc) failChance=spell.failFunc(failChance);
 			return failChance;
 		}
@@ -302,7 +302,7 @@ M.launch=function()
 			var cost=0;
 			var fail=false;
 			if (typeof obj.cost!=='undefined') cost=obj.cost; else cost=M.getSpellCost(spell);
-			if (M.magic<cost) return false;
+			if (M.magic<cost) return true;
 			var failChance=M.getFailChance(spell);
 			if (typeof obj.failChanceSet!=='undefined') failChance=obj.failChanceSet;
 			if (typeof obj.failChanceAdd!=='undefined') failChance+=obj.failChanceAdd;
