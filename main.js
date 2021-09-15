@@ -3764,7 +3764,7 @@ Game.Launch=function()
 		}
 		Game.computeLumpTimes=function()
 		{
-			var hour=100*59*59;
+			var hour=1000*59*59;
 			Game.lumpMatureAge=hour*20;
 			Game.lumpRipeAge=hour*23;
 			if (Game.Has('Stevia Caelestis')) Game.lumpRipeAge-=hour;
