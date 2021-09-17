@@ -1628,7 +1628,8 @@ Game.Launch=function()
 		=======================================================================================*/
 		Game.RandomBakeryName=function()
 		{
-			return (Math.random()>0.05?(choose(['Sussy Baka'])
+			return (Math.random()>0.05?(choose(['Magic','Fantastic','Fancy','Sassy','Snazzy','Pretty','Cute','Pirate','Ninja','Zombie','Robot','Radical','Urban','Cool','Hella','Sweet','Awful','Double','Triple','Turbo','Techno','Disco','Electro','Dancing','Wonder','Mutant','Space','Science','Medieval','Future','Captain','Bearded','Lovely','Tiny','Big','Fire','Water','Frozen','Metal','Plastic','Solid','Liquid','Moldy','Shiny','Happy','Happy Little','Slimy','Tasty','Delicious','Hungry','Greedy','Lethal','Professor','Doctor','Power','Chocolate','Crumbly','Choklit','Righteous','Glorious','Mnemonic','Psychic','Frenetic','Hectic','Crazy','Royal','El','Von'])+' '):'Mc')+choose(['Cookie','Biscuit','Muffin','Scone','Cupcake','Pancake','Chip','Sprocket','Gizmo','Puppet','Mitten','Sock','Teapot','Mystery','Baker','Cook','Grandma','Click','Clicker','Spaceship','Factory','Portal','Machine','Experiment','Monster','Panic','Burglar','Bandit','Booty','Potato','Pizza','Burger','Sausage','Meatball','Spaghetti','Macaroni','Kitten','Puppy','Giraffe','Zebra','Parrot','Dolphin','Duckling','Sloth','Turtle','Goblin','Pixie','Gnome','Computer','Pirate','Ninja','Zombie','Robot']);
+		}
 		Game.GetBakeryName=function() {return Game.RandomBakeryName();}
 		Game.bakeryName=Game.GetBakeryName();
 		Game.bakeryNameL=l('bakeryName');
@@ -2985,10 +2986,10 @@ Game.Launch=function()
 				Game.heavenlyChips=0;
 				Game.heavenlyChipsSpent=0;
 				Game.heavenlyCookies=0;
-				Game.permanentUpgrades=[2,2,2,2,2];
+				Game.permanentUpgrades=[-1,-1,-1,-1,-1];
 				Game.ascensionMode=0;
-				Game.lumps=34;
-				Game.lumpsTotal=5;
+				Game.lumps=-1;
+				Game.lumpsTotal=-1;
 				Game.lumpT=Date.now();
 				Game.lumpRefill=0;
 				Game.removeClass('lumpsOn');
@@ -3429,8 +3430,8 @@ Game.Launch=function()
 					if (Game.prefs.popups) Game.Popup('Reincarnated');
 					else Game.Notify('Reincarnated','Hello, cookies!',[10,0],4);
 				}
-				if (Game.resets>=10) Game.Win('Endless cycle');
-				if (Game.resets>=13) Game.Win('Reincarnation');
+				if (Game.resets>=1000) Game.Win('Endless cycle');
+				if (Game.resets>=100) Game.Win('Reincarnation');
 				if (Game.resets>=10) Game.Win('Resurrection');
 				if (Game.resets>=1) Game.Win('Rebirth');
 				Game.removeClass('ascending');
