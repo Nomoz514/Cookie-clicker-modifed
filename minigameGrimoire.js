@@ -12,14 +12,14 @@ M.launch=function()
 		M.spells={
 			'conjure baked goods':{
 				name:'COOKIE',
-				desc:'Summon half an hour worth of your CpS, capped at 15% of your cookies owned.',
-				failDesc:'Trigger a 15-minute clot and lose 15 minutes of CpS.',
+				desc:'FEE Zone',
+				failDesc:'Trigger a 15-minute.clot and lose 15 minutes of CpS.',
 				icon:[21,11],
 				costMin:2,
-				costPercent:0.4,
+				costPercent:0.01,
 				win:function()
 				{
-					var val=Math.max(7,Math.min(Game.cookies*10000,Game.cookiesPs*6000*3000));
+					var val=Math.max(7,Math.min(Game.cookies*10000,Game.cookiesPs*60000*30000));
 					Game.Earn(val);
 					Game.Notify('Conjure baked goods!','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> out of thin air.',[21,11],6);
 					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
@@ -80,8 +80,8 @@ M.launch=function()
 				desc:'All active buffs gain 10% more time (up to 5 more minutes).',
 				failDesc:'All active buffs are shortened by 20% (up to 10 minutes shorter).',
 				icon:[23,11],
-				costMin:8,
-				costPercent:0.2,
+				costMin:1,
+				costPercent:0.01,
 				win:function()
 				{
 					var changed=0;
@@ -116,8 +116,8 @@ M.launch=function()
 				desc:'The spell picks a random building you could afford if you had twice your current cookies, and gives it to you for free. The building selected must be under 400, and cannot be your most-built one (unless it is your only one).',
 				failDesc:'Lose a random building.',
 				icon:[24,11],
-				costMin:20,
-				costPercent:0.75,
+				costMin:2,
+				costPercent:0.1,
 				win:function()
 				{
 					var buildings=[];
