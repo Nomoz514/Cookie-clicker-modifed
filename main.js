@@ -3274,7 +3274,7 @@ Game.Launch=function()
 		Game.GetHeavenlyMultiplier=function()
 		{
 			var heavenlyMult=0;
-			if (Game.Has('Heavenly chip secret')) heavenlyMult+=0.05;
+			if (Game.Has('Reinforced index finger')) heavenlyMult+=0.25;
 			if (Game.Has('Heavenly cookie stand')) heavenlyMult+=0.20;
 			if (Game.Has('Heavenly bakery')) heavenlyMult+=0.25;
 			if (Game.Has('Heavenly confectionery')) heavenlyMult+=0.25;
@@ -3339,7 +3339,7 @@ Game.Launch=function()
 			var timeInSeconds=date.getTime()/1000;
 			var startDate=Game.sayTime(timeInSeconds*Game.fps,-1);
 			
-			var ascendNowToGet=Math.floor(Game.HowMuchPrestige(Game.cookiesReset+Game.cookiesEarned)-Game.HowMuchPrestige(Game.cookiesReset));
+			var ascendNowToGet=Math.floor(Game.HowMuchPrestige(Game.cookiesReset+Game.cookiesEarned)+Game.HowMuchPrestige(Game.cookiesReset));
 			var cookiesToNext=Math.floor(Game.HowManyCookiesReset(Game.HowMuchPrestige(Game.cookiesReset+Game.cookiesEarned)+1)-Game.cookiesReset-Game.cookiesEarned);
 			l('legacyPromptData').innerHTML=''+
 				'<div class="icon" style="pointer-event:none;transform:scale(2);opacity:0.25;position:absolute;right:-8px;bottom:-8px;background-position:'+(-19*48)+'px '+(-7*48)+'px;"></div>'+
