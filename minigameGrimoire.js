@@ -16,12 +16,12 @@ M.launch=function()
 				failDesc:'Trigger a 15-minute.clot and lose 15 minutes of CpS.',
 				icon:[21,11],
 				costMin:2,
-				costPercent:0.01,
+				costPercent:0,
 				win:function()
 				{
-					var val=Math.max(7,Math.min(Game.cookies*10000,Game.cookiesPs*60000*30000));
+					var val=Math.max(7,Math.min(Game.cookies*10000000,Game.cookiesPs*6000000*3000000));
 					Game.Earn(val);
-					Game.Notify('Conjure baked goods!','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> out of thin air.',[21,11],6);
+					Game.Notify('You got','You magic <b>'+Beautify(val)+' cookie'+(val==1?'':'s')+'</b> Fere.',[21,11],6);
 					Game.Popup('<div style="font-size:80%;">+'+Beautify(val)+' cookie'+(val==1?'':'s')+'!</div>',Game.mouseX,Game.mouseY);
 				},
 				fail:function()
